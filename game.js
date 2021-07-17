@@ -50,6 +50,7 @@ function startOver()
 function playSound(name)
 {
     var audio = new Audio("sounds/"+name+".mp3");
+    audio.preload='auto';
     audio.play();
 }
 

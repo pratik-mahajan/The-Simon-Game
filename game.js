@@ -8,6 +8,15 @@ var level=0;
 
 var start=false;
 
+var audiored = new Audio("sounds/red.mp3");
+    audiored.preload='auto';
+var audioblue = new Audio("sounds/blue.mp3");
+    audioblue.preload='auto';
+var audiogreen = new Audio("sounds/green.mp3");
+    audiogreen.preload='auto';
+var audioyellow = new Audio("sounds/yellow.mp3");
+    audioyellow.preload='auto';
+
 $(document).keypress(function(){
     if(start==false)
     {
@@ -49,9 +58,22 @@ function startOver()
 
 function playSound(name)
 {
-    var audio = new Audio("sounds/"+name+".mp3");
-    audio.preload='auto';
-    audio.play();
+    if(name==red)
+    {
+        audiored.play();
+    }
+    else if(name==blue)
+    {
+        audioblue.play();
+    }
+    else if(name==green)
+    {
+        audiogreen.play();
+    }
+    else if(name==yellow)
+    {
+        audioyellow.play();
+    }
 }
 
 function animatePress(currentColour)
